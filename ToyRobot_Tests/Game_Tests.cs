@@ -24,7 +24,7 @@ public class Tests
     {
         game.PlaceRobot(_initialPlacement);
         game.MoveRobot();
-        Assert.That(!game.ReportRobotLocation().Equals("Output: 0,1,NORTH"));
+        Assert.That(game.ReportRobotLocation().Equals("Output: 0,1,NORTH"));
     }
 
     [Test]

@@ -3,8 +3,8 @@
     public enum Direction
     {
         NORTH = 1,
-        SOUTH = 2,
-        EAST = 3,
+        SOUTH = 3,
         WEST = 4,
+        EAST = 2,
     }
 }

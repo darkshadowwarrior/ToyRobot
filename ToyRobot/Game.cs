@@ -10,7 +10,13 @@
 
         public void MoveRobot()
         {
-            
+            switch ((int)_direction)
+            {
+                case 1: _yCoordinate += 1; break;
+                case 2: _xCoordinate += 1; break;
+                case 3: _yCoordinate -= 1; break;
+                case 4: _xCoordinate -= 1; break;
+            }
         }
 
         public void PlaceRobot(string[] @params)
