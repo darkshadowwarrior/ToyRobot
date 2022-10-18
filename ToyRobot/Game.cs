@@ -4,8 +4,8 @@
 
     public partial class Game
     {
-        private int _yCoordinate = 3;
-        private int _xCoordinate = 3;
+        private int _yCoordinate;
+        private int _xCoordinate;
         private Direction _direction;
 
         public void MoveRobot()
@@ -27,7 +27,21 @@
 
         public void TurnRobotLeft()
         {
-            
+            switch ((int)_direction)
+            {
+                case 1:
+                    _direction = Direction.WEST;
+                    break;
+                case 2:
+                    _direction = Direction.NORTH;
+                    break;
+                case 3:
+                    _direction = Direction.EAST;
+                    break;
+                case 4:
+                    _direction = Direction.SOUTH;
+                    break;
+            }
         }
 
         public static T ParseEnum<T>(string value)

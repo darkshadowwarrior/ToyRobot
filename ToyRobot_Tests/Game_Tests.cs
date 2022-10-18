@@ -32,7 +32,7 @@ public class Tests
     {
         game.PlaceRobot(_initialPlacement);
         game.TurnRobotLeft();
-        Assert.That(!game.ReportRobotLocation().Equals("Output: 0,0,WEST"));
+        Assert.That(game.ReportRobotLocation().Equals("Output: 0,0,WEST"));
     }
 
     [Test]
