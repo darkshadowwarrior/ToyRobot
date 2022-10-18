@@ -36,6 +36,6 @@ public class Tests
         game.MoveRobot();
         game.TurnRobotLeft();
         game.MoveRobot();
-        Assert.That(!game.ReportRobotLocation().Equals("Output: 3,3,NORTH"));
+        Assert.That(game.ReportRobotLocation().Equals("Output: 3,3,NORTH"));
     }
 }

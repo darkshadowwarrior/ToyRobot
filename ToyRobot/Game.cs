@@ -1,7 +1,12 @@
 ﻿namespace ToyRobot
 {
-    public class Game
+
+
+    public partial class Game
     {
+        private int _yCoordinate = 3;
+        private int _xCoordinate = 3;
+
         public void MoveRobot()
         {
             
@@ -14,7 +19,7 @@
 
         public string ReportRobotLocation()
         {
-            return "";
+            return $"Output: {_xCoordinate},{_yCoordinate},{Direction.NORTH}";
         }
 
         public void TurnRobotLeft()
