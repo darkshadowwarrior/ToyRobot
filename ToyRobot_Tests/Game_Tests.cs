@@ -36,6 +36,14 @@ public class Tests
     }
 
     [Test]
+    public void Assert_That_Result_Equals_Output_0_0_EAST()
+    {
+        game.PlaceRobot(_initialPlacement);
+        game.TurnRobotRight();
+        Assert.That(game.ReportRobotLocation().Equals("Output: 0,0,EAST"));
+    }
+
+    [Test]
     public void Assert_That_Result_Equals_Output_3_3_NORTH()
     {
         game.PlaceRobot(_initialPlacement);

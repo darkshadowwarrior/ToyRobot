@@ -44,6 +44,25 @@
             }
         }
 
+        public void TurnRobotRight()
+        {
+            switch ((int)_direction)
+            {
+                case 1:
+                    _direction = Direction.EAST;
+                    break;
+                case 2:
+                    _direction = Direction.SOUTH;
+                    break;
+                case 3:
+                    _direction = Direction.WEST;
+                    break;
+                case 4:
+                    _direction = Direction.NORTH;
+                    break;
+            }
+        }
+
         public static T ParseEnum<T>(string value)
         {
             return (T)Enum.Parse(typeof(T), value, true);
