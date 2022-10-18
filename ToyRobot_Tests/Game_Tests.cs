@@ -4,12 +4,18 @@ namespace ToyRobot_Tests;
 public class Tests
 {
     private Game game;
-    private string[] _initialPlacement = new string[3] { "0", "0", "NORTH" };
+    private string _initialXCoordinate = "0";
+    private string _initialYCoordinate = "0";
+    private Direction _initialDirection = Direction.NORTH;
+    private string[] _initialPlacement = new string[3];
 
     [SetUp]
     public void Setup()
     {
         game = new Game();
+        _initialPlacement[0] = _initialYCoordinate;
+        _initialPlacement[1] = _initialXCoordinate;
+        _initialPlacement[2] = _initialDirection.ToString();
     }
 
     [Test]
@@ -46,11 +52,22 @@ public class Tests
     [Test]
     public void Assert_That_Result_Equals_Output_3_3_NORTH()
     {
-        game.PlaceRobot(_initialPlacement);
+        var initialYCoordinate = "1";
+        var initialXCoordinate = "2";
+        var initialDirection = Direction.EAST;
+
+        var initialPlacement = new string[3]
+        {
+            initialYCoordinate,
+            initialXCoordinate,
+            initialDirection.ToString()
+        };
+
+        game.PlaceRobot(initialPlacement);
         game.MoveRobot();
         game.MoveRobot();
         game.TurnRobotLeft();
         game.MoveRobot();
-        Assert.That(!game.ReportRobotLocation().Equals("Output: 3,3,NORTH"));
+        Assert.That(game.ReportRobotLocation().Equals("Output: 3,3,NORTH"));
     }
 }
