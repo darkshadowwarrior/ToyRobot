@@ -17,6 +17,8 @@
                 case 3: _yCoordinate -= 1; break;
                 case 4: _xCoordinate -= 1; break;
             }
+
+            //pausing for a break, will finish up tomorrow
         }
 
         public void PlaceRobot(string[] @params)
