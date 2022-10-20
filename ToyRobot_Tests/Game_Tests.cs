@@ -13,7 +13,7 @@ public class Tests
     [SetUp]
     public void Setup()
     {
-        game = new Game();
+        game = new Game(new ToyRobot.Models.Robot(), new ToyRobot.Models.Table(), new Report());
         _initialPlacement[0] = _initialYCoordinate;
         _initialPlacement[1] = _initialXCoordinate;
         _initialPlacement[2] = _initialDirection.ToString();
