@@ -8,15 +8,16 @@ public class Tests
     private string _initialXCoordinate = "0";
     private string _initialYCoordinate = "0";
     private Direction _initialDirection = Direction.NORTH;
-    private string[] _initialPlacement = new string[3];
+    private string[] _initialPlacement = new string[4];
 
     [SetUp]
     public void Setup()
     {
         game = new Game(new ToyRobot.Models.Robot(), new ToyRobot.Models.Table(), new Report());
-        _initialPlacement[0] = _initialYCoordinate;
-        _initialPlacement[1] = _initialXCoordinate;
-        _initialPlacement[2] = _initialDirection.ToString();
+        _initialPlacement[0] = "PLACE";
+        _initialPlacement[1] = _initialYCoordinate;
+        _initialPlacement[2] = _initialXCoordinate;
+        _initialPlacement[3] = _initialDirection.ToString();
     }
 
     [Test]
@@ -26,8 +27,9 @@ public class Tests
         var initialXCoordinate = "2";
         var initialDirection = Direction.EAST;
 
-        var initialPlacement = new string[3]
+        var initialPlacement = new string[4]
         {
+            "PLACE",
             initialYCoordinate,
             initialXCoordinate,
             initialDirection.ToString()
@@ -44,8 +46,9 @@ public class Tests
         var initialXCoordinate = "6";
         var initialDirection = Direction.EAST;
 
-        var initialPlacement = new string[3]
+        var initialPlacement = new string[4]
         {
+            "PLACE",
             initialYCoordinate,
             initialXCoordinate,
             initialDirection.ToString()
@@ -93,8 +96,9 @@ public class Tests
         var initialXCoordinate = "1";
         var initialDirection = Direction.EAST;
 
-        var initialPlacement = new string[3]
+        var initialPlacement = new string[4]
         {
+            "PLACE",
             initialYCoordinate,
             initialXCoordinate,
             initialDirection.ToString()
@@ -115,8 +119,9 @@ public class Tests
         var initialXCoordinate = "1";
         var initialDirection = Direction.EAST;
 
-        var initialPlacement = new string[3]
+        var initialPlacement = new string[4]
         {
+            "PLACE",
             initialYCoordinate,
             initialXCoordinate,
             initialDirection.ToString()
@@ -140,8 +145,9 @@ public class Tests
         var initialXCoordinate = "1";
         var initialDirection = Direction.NORTH;
 
-        var initialPlacement = new string[3]
+        var initialPlacement = new string[4]
         {
+            "PLACE",
             initialYCoordinate,
             initialXCoordinate,
             initialDirection.ToString()
