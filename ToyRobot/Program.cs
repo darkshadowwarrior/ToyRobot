@@ -11,39 +11,29 @@ while (true)
     { 
         var line = Console.ReadLine().Split(' ');
 
-        if (!game.IsRobotOnTable() && line[0] == "PLACE")
+        if (!game.IsRobotOnTable())
         {
-            game.PlaceRobot(line);
-        }
-
-        if (line[0] == "REPORT")
+            switch (line[0])
+            {
+                case "PLACE": game.PlaceRobot(line); break;
+                default: Console.WriteLine("Sorry I didn't understand, please try again"); break;
+            }
+        } else
         {
-            Console.WriteLine($"Output: {game.ReportRobotLocation()}");
+            switch(line[0])
+            {
+                case "REPORT": Console.WriteLine($"Output: {game.ReportRobotLocation()}"); break;
+                case "MOVE": game.MoveRobot(); break;
+                case "LEFT": game.TurnRobotLeft(); break;
+                case "RIGHT": game.TurnRobotRight(); break;
+                case "HELP": game.Help(); break;
+                default: Console.WriteLine("Sorry I didn't understand, please try again"); break;
+            }
         }
-
-        if (line[0] == "MOVE")
-        {
-            game.MoveRobot();
-        }
-
-        if (line[0] == "LEFT")
-        {
-            game.TurnRobotLeft();
-        }
-
-        if (line[0] == "RIGHT")
-        {
-            game.TurnRobotRight();
-        }
-
-        if (line[0] == "HELP")
-        {
-            game.Help();
-        }
+        Console.Write("What move would you like to try next \n");
     }
     catch (Exception e)
     {
-        Console.WriteLine("You can not go that way. Please try again");
+        Console.WriteLine("Sorry I didn't understand, please try again");
     }
-    Console.Write("What move would you like to try next \n");
 }
