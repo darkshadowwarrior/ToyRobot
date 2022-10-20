@@ -1,4 +1,5 @@
 using ToyRobot;
+using ToyRobot.Enums;
 
 namespace ToyRobot_Tests;
 public class Tests

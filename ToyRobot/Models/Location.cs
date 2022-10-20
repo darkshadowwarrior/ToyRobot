@@ -1,4 +1,6 @@
-﻿namespace ToyRobot
+﻿using ToyRobot.Enums;
+
+namespace ToyRobot.Models
 {
     public class Location
     {

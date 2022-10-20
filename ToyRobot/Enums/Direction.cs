@@ -1,4 +1,4 @@
-﻿namespace ToyRobot
+﻿namespace ToyRobot.Enums
 {
     public enum Direction
     {

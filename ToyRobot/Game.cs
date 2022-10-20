@@ -1,4 +1,7 @@
-﻿namespace ToyRobot
+﻿using ToyRobot.Enums;
+using ToyRobot.Models;
+
+namespace ToyRobot
 {
 
 
@@ -37,8 +40,6 @@
 
         public void PlaceRobot(string[] @params)
         {
-            var currentLocation = _robot.Location;
-
             if(IsValidPosition(int.Parse(@params[0]), int.Parse(@params[1])))
             {
                 _robot.Location = new Location(int.Parse(@params[0]), int.Parse(@params[1]), ParseEnum<Direction>(@params[2]));
