@@ -107,4 +107,54 @@ public class Tests
         game.MoveRobot();
         Assert.That(game.ReportRobotLocation().Equals("Output: 3,3,NORTH"));
     }
+
+    [Test]
+    public void Assert_That_Result_Equals_Output_4_3_NORTH()
+    {
+        var initialYCoordinate = "2";
+        var initialXCoordinate = "1";
+        var initialDirection = Direction.EAST;
+
+        var initialPlacement = new string[3]
+        {
+            initialYCoordinate,
+            initialXCoordinate,
+            initialDirection.ToString()
+        };
+
+        game.PlaceRobot(initialPlacement);
+        game.MoveRobot();
+        game.MoveRobot();
+        game.MoveRobot();
+        game.MoveRobot();
+        game.MoveRobot();
+        game.TurnRobotLeft();
+        game.MoveRobot();
+        Assert.That(game.ReportRobotLocation().Equals("Output: 4,3,NORTH"));
+    }
+
+    [Test]
+    public void Assert_That_Result_Equals_Output_3_4_EAST()
+    {
+        var initialYCoordinate = "2";
+        var initialXCoordinate = "1";
+        var initialDirection = Direction.NORTH;
+
+        var initialPlacement = new string[3]
+        {
+            initialYCoordinate,
+            initialXCoordinate,
+            initialDirection.ToString()
+        };
+
+        game.PlaceRobot(initialPlacement);
+        game.MoveRobot();
+        game.MoveRobot();
+        game.MoveRobot();
+        game.MoveRobot();
+        game.MoveRobot();
+        game.TurnRobotRight();
+        game.MoveRobot();
+        Assert.That(game.ReportRobotLocation().Equals("Output: 2,4,EAST"));
+    }
 }

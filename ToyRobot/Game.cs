@@ -19,12 +19,19 @@ namespace ToyRobot
 
         public void MoveRobot()
         {
+            var currentLocation = new Location(_robot.Location.YCoordinate, _robot.Location.XCoordinate, _robot.Location.CurrentDirection);
+
             switch ((int)_robot.Location.CurrentDirection)
             {
                 case 1: _robot.Location.YCoordinate += 1; break;
                 case 2: _robot.Location.XCoordinate += 1; break;
                 case 3: _robot.Location.YCoordinate -= 1; break;
                 case 4: _robot.Location.XCoordinate -= 1; break;
+            }
+
+            if(!IsValidPosition(_robot.Location.XCoordinate, _robot.Location.YCoordinate))
+            {
+                _robot.Location = currentLocation;
             }
         }
 
