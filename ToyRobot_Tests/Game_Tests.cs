@@ -19,6 +19,42 @@ public class Tests
     }
 
     [Test]
+    public void Assert_RobotHasBeenPlace_WithOutOfBoundsYCoordinate()
+    {
+        var initialYCoordinate = "6";
+        var initialXCoordinate = "2";
+        var initialDirection = Direction.EAST;
+
+        var initialPlacement = new string[3]
+        {
+            initialYCoordinate,
+            initialXCoordinate,
+            initialDirection.ToString()
+        };
+
+        game.PlaceRobot(initialPlacement);
+        Assert.That(!game.ReportRobotLocation().Equals("Output: 6,2,EAST"));
+    }
+
+    [Test]
+    public void Assert_RobotHasBeenPlace_WithOutOfBoundsXCoordinate()
+    {
+        var initialYCoordinate = "2";
+        var initialXCoordinate = "6";
+        var initialDirection = Direction.EAST;
+
+        var initialPlacement = new string[3]
+        {
+            initialYCoordinate,
+            initialXCoordinate,
+            initialDirection.ToString()
+        };
+
+        game.PlaceRobot(initialPlacement);
+        Assert.That(!game.ReportRobotLocation().Equals("Output: 6,2,EAST"));
+    }
+
+    [Test]
     public void Assert_RobotHasBeenPlace_EqualsTrue()
     {
         game.PlaceRobot(_initialPlacement);
@@ -52,8 +88,8 @@ public class Tests
     [Test]
     public void Assert_That_Result_Equals_Output_3_3_NORTH()
     {
-        var initialYCoordinate = "1";
-        var initialXCoordinate = "2";
+        var initialYCoordinate = "2";
+        var initialXCoordinate = "1";
         var initialDirection = Direction.EAST;
 
         var initialPlacement = new string[3]

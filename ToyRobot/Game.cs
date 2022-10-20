@@ -4,69 +4,86 @@
 
     public partial class Game
     {
-        private int _yCoordinate;
-        private int _xCoordinate;
-        private Direction _direction;
+
+        private Robot _robot;
+        private const int MAX_XCOORDINATE = 5; 
+        private const int MAX_YCOORDINATE = 5;
+
+        public Game()
+        {
+            _robot = new Robot();
+        }
 
         public void MoveRobot()
         {
-            switch ((int)_direction)
+            switch ((int)_robot.Location.CurrentDirection)
             {
-                case 1: _yCoordinate += 1; break;
-                case 2: _xCoordinate += 1; break;
-                case 3: _yCoordinate -= 1; break;
-                case 4: _xCoordinate -= 1; break;
+                case 1: _robot.Location.YCoordinate += 1; break;
+                case 2: _robot.Location.XCoordinate += 1; break;
+                case 3: _robot.Location.YCoordinate -= 1; break;
+                case 4: _robot.Location.XCoordinate -= 1; break;
+            }
+        }
+
+        public bool IsValidPosition(int x, int y)
+        {
+            if(y < MAX_YCOORDINATE && y >= 0 && x < MAX_XCOORDINATE && x >= 0)
+            {
+                return true;
             }
 
-            //pausing for a break, will finish up tomorrow
+            return false;
         }
 
         public void PlaceRobot(string[] @params)
         {
-            _xCoordinate = int.Parse(@params[0]);
-            _yCoordinate = int.Parse(@params[1]);
-            _direction = ParseEnum<Direction>(@params[2]);
+            var currentLocation = _robot.Location;
+
+            if(IsValidPosition(int.Parse(@params[0]), int.Parse(@params[1])))
+            {
+                _robot.Location = new Location(int.Parse(@params[0]), int.Parse(@params[1]), ParseEnum<Direction>(@params[2]));
+            }
         }
 
         public string ReportRobotLocation()
         {
-            return $"Output: {_xCoordinate},{_yCoordinate},{_direction.ToString()}";
+            return $"Output: {_robot.Location?.XCoordinate},{_robot.Location?.YCoordinate},{_robot.Location?.CurrentDirection.ToString()}";
         }
 
         public void TurnRobotLeft()
         {
-            switch ((int)_direction)
+            switch ((int)_robot.Location.CurrentDirection)
             {
                 case 1:
-                    _direction = Direction.WEST;
+                    _robot.Location.CurrentDirection = Direction.WEST;
                     break;
                 case 2:
-                    _direction = Direction.NORTH;
+                    _robot.Location.CurrentDirection = Direction.NORTH;
                     break;
                 case 3:
-                    _direction = Direction.EAST;
+                    _robot.Location.CurrentDirection = Direction.EAST;
                     break;
                 case 4:
-                    _direction = Direction.SOUTH;
+                    _robot.Location.CurrentDirection = Direction.SOUTH;
                     break;
             }
         }
 
         public void TurnRobotRight()
         {
-            switch ((int)_direction)
+            switch ((int)_robot.Location.CurrentDirection)
             {
                 case 1:
-                    _direction = Direction.EAST;
+                    _robot.Location.CurrentDirection = Direction.EAST;
                     break;
                 case 2:
-                    _direction = Direction.SOUTH;
+                    _robot.Location.CurrentDirection = Direction.SOUTH;
                     break;
                 case 3:
-                    _direction = Direction.WEST;
+                    _robot.Location.CurrentDirection = Direction.WEST;
                     break;
                 case 4:
-                    _direction = Direction.NORTH;
+                    _robot.Location.CurrentDirection = Direction.NORTH;
                     break;
             }
         }
