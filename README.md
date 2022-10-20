@@ -42,10 +42,14 @@ move that would cause the robot to fall must be ignored.
 # Instructions:
 
 This project has been developed using [dotnet 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
-You will need to download and install the dotnet 6 runtime and sdk if you wish to run and/or develop the kata further<>
+You will need to download and install the dotnet 6 runtime and sdk if you wish to run and/or develop the kata further
 
 The main project and tests can be found in the solution folder.
-To run the tests you should be able to load up the project in your chosen IDE and run the tests from the Game_Tests file
-I have use NUnit for testing as this is a testing framework I am familiar with
-To run the project you must first build this project using an IDE of your choice that supports C# .Net and dotnet 6.
-Once built you caqn either run the project using your IDE of choice or via the EXE the can be found [here] (ToyRobot\ToyRobot\bin\Debug\net6.0)
+
+To run the tests you should be able to load up the project in your chosen IDE and run the tests from the Game_Tests file using a test runner that runs NUnit test. I would recommend Visual Studio 2022 as this has support for dotnet 6.
+
+I have use NUnit for testing as this is a testing framework I am familiar with.
+
+To run the project you must first build this project using an IDE of your choice (or Visual Studio 2022) that supports C# .Net and dotnet 6.
+
+Once built you can either run the project using your IDE of choice or via the EXE the can be found within the solution at this location - ToyRobot\ToyRobot\bin\Debug\net6.0

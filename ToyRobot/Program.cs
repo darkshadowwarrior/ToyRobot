@@ -13,14 +13,14 @@ while (true)
 
         if (!game.IsRobotOnTable())
         {
-            switch (line[0])
+            switch (line[0].ToUpper())
             {
                 case "PLACE": game.PlaceRobot(line); break;
                 default: Console.WriteLine("Sorry I didn't understand, please try again"); break;
             }
         } else
         {
-            switch(line[0])
+            switch(line[0].ToUpper())
             {
                 case "REPORT": Console.WriteLine($"Output: {game.ReportRobotLocation()}"); break;
                 case "MOVE": game.MoveRobot(); break;

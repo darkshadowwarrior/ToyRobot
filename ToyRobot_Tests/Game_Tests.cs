@@ -92,15 +92,15 @@ public class Tests
     [Test]
     public void Assert_That_Result_Equals_Output_3_3_NORTH()
     {
-        var initialYCoordinate = "2";
-        var initialXCoordinate = "1";
+        var initialYCoordinate = "1";
+        var initialXCoordinate = "2";
         var initialDirection = Direction.EAST;
 
         var initialPlacement = new string[4]
         {
             "PLACE",
-            initialYCoordinate,
             initialXCoordinate,
+            initialYCoordinate,
             initialDirection.ToString()
         };
 
@@ -115,15 +115,15 @@ public class Tests
     [Test]
     public void Assert_That_Result_Equals_Output_4_3_NORTH()
     {
-        var initialYCoordinate = "2";
-        var initialXCoordinate = "1";
+        var initialYCoordinate = "1";
+        var initialXCoordinate = "2";
         var initialDirection = Direction.EAST;
 
         var initialPlacement = new string[4]
         {
             "PLACE",
-            initialYCoordinate,
             initialXCoordinate,
+            initialYCoordinate,
             initialDirection.ToString()
         };
 
@@ -139,17 +139,17 @@ public class Tests
     }
 
     [Test]
-    public void Assert_That_Result_Equals_Output_3_4_EAST()
+    public void Assert_That_Result_Equals_Output_2_4_EAST()
     {
-        var initialYCoordinate = "2";
-        var initialXCoordinate = "1";
+        var initialYCoordinate = "1";
+        var initialXCoordinate = "2";
         var initialDirection = Direction.NORTH;
 
         var initialPlacement = new string[4]
         {
             "PLACE",
-            initialYCoordinate,
             initialXCoordinate,
+            initialYCoordinate,
             initialDirection.ToString()
         };
 
