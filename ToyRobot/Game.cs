@@ -25,12 +25,12 @@ namespace ToyRobot
         {
             var currentLocation = new Location(_robot.Location.YCoordinate, _robot.Location.XCoordinate, _robot.Location.CurrentDirection);
 
-            switch ((int)_robot.Location.CurrentDirection)
+            switch (_robot.Location.CurrentDirection)
             {
-                case 1: _robot.Location.YCoordinate += 1; break;
-                case 2: _robot.Location.XCoordinate += 1; break;
-                case 3: _robot.Location.YCoordinate -= 1; break;
-                case 4: _robot.Location.XCoordinate -= 1; break;
+                case Direction.NORTH: _robot.Location.YCoordinate += 1; break;
+                case Direction.EAST: _robot.Location.XCoordinate += 1; break;
+                case Direction.SOUTH: _robot.Location.YCoordinate -= 1; break;
+                case Direction.WEST: _robot.Location.XCoordinate -= 1; break;
             }
 
             if(!_table.IsValidPosition(_robot.Location.XCoordinate, _robot.Location.YCoordinate))
@@ -60,18 +60,18 @@ namespace ToyRobot
 
         public void TurnRobotLeft()
         {
-            switch ((int)_robot.Location.CurrentDirection)
+            switch (_robot.Location.CurrentDirection)
             {
-                case 1:
+                case Direction.NORTH:
                     _robot.Location.CurrentDirection = Direction.WEST;
                     break;
-                case 2:
+                case Direction.EAST:
                     _robot.Location.CurrentDirection = Direction.NORTH;
                     break;
-                case 3:
+                case Direction.SOUTH:
                     _robot.Location.CurrentDirection = Direction.EAST;
                     break;
-                case 4:
+                case Direction.WEST:
                     _robot.Location.CurrentDirection = Direction.SOUTH;
                     break;
             }
@@ -79,18 +79,18 @@ namespace ToyRobot
 
         public void TurnRobotRight()
         {
-            switch ((int)_robot.Location.CurrentDirection)
+            switch (_robot.Location.CurrentDirection)
             {
-                case 1:
+                case Direction.NORTH:
                     _robot.Location.CurrentDirection = Direction.EAST;
                     break;
-                case 2:
+                case Direction.EAST:
                     _robot.Location.CurrentDirection = Direction.SOUTH;
                     break;
-                case 3:
+                case Direction.SOUTH:
                     _robot.Location.CurrentDirection = Direction.WEST;
                     break;
-                case 4:
+                case Direction.WEST:
                     _robot.Location.CurrentDirection = Direction.NORTH;
                     break;
             }
